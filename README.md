@@ -1,6 +1,6 @@
 # Community Detection on OGBN-ArXiv Dataset
 
-This repository contains the code and results of my Machine Learning on Graphs course project, where I applied various community detection methods on the OGBN-ArXiv dataset. 
+## Table of Contents
 - [Introduction](#introduction)
 - [Dataset](#Dataset)
 - [Ready-made Functions in NetworkX](#Ready-made-Functions-in-NetworkX)
@@ -18,7 +18,11 @@ This repository contains the code and results of my Machine Learning on Graphs c
 
 
 ## Introduction
+Welcome to our GitHub repository, where we explore community detection methods on the OGBN-ArXiv dataset. This dataset, part of the Open Graph Benchmark, represents a vast network of arXiv papers with directed edges symbolizing citations. Papers are characterized by 128-dimensional feature vectors and a 40-class primary category label. We embark on a journey to predict these categories based on network structure and node features.
 
+We tackle various approaches, beginning with NetworkX's functions and progressing to custom solutions. Challenges and optimizations unfold as we navigate through Forest Fire Sampling with Landmarks, efficient Louvain algorithms, and custom evaluators to improve accuracy.
+
+Our journey extends to DeepWalk and Node2Vec for node embeddings, K-Means clustering for clustering nodes, and Deep Learning on Node Embeddings. We then explore Graph Neural Networks (GNNs) such as GCN and GraphSAGE, while discovering the benefits of converting the graph into an undirected form for enhanced accuracy.
 ## Dataset
 The dataset that I used for this project is the OGBN-ArXiv dataset, which is part of the Open Graph Benchmark (OGB) collection. The OGBN-ArXiv dataset is a large-scale citation network of arXiv papers, where each node is an arXiv paper and each directed edge indicates that one paper cites another one. Each paper has a 128-dimensional feature vector obtained by averaging the embeddings of words in its title and abstract. Each paper also has a year attribute that indicates when it was published. The goal is to predict the category of the papers based on the network structure and the node features.
 
