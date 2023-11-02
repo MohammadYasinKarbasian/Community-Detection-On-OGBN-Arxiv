@@ -49,8 +49,8 @@ Then I ran the stable matching algorithm on these so that each community is simi
 Relevant results:
 | Method | Stable Matching Evaluator | Simple Evaluator |
 | --- | --- | --- |
-| Louvain | 16.069% | 0.387% |
-| Fluid | 16.284% | 13.095% |
+| Louvain | 16.07% | 0.39% |
+| Fluid | 16.28% | 13.09% |
 
 But again, these accuracy values are low, so in the next phase of the project, I was looking for embeddings from the nodes and running algorithms on the embeddings in the hope of higher accuracy percentages.
 
@@ -68,9 +68,9 @@ In this step, I tried to use the embeddings that I obtained in the previous step
 The results obtained are as follows:
 | Method | Stable Matching Evaluator
 | --- | --- |
-| DeepWalk | 21.164% |
-| Node2Vec (BFS mode) | 21.850% |
-| Node2Vec (DFS mode) | 16.671% |
+| DeepWalk | 21.16% |
+| Node2Vec (BFS mode) | 21.85% |
+| Node2Vec (DFS mode) | 16.67% |
 
 As we can see, we reached higher percentages.
 
@@ -84,7 +84,14 @@ By using the labels provided by the dataset, I reached high percentages on embed
 
 which was a fundamental advance in achieving higher accuracy.
 Also, you can see the progress chart of these three algorithms to reach these percentages in the figures below:
-this is img ---------------------------
+
+<br>
+<img src="./img/Picture1.png" width="800">
+<br>
+<img src="./img/Picture2.png" width="800">
+<br>
+<img src="./img/Picture3.png" width="800">
+<br>
 ### Graph Neural Networks (GNNs)
 In this part, I implemented three GCN, GAT, and GraphSAGE algorithms; unfortunately, I was not able to implement the GAT algorithm using GPU due to the large amount of memory required. I trained each algorithm for 200 epochs, but in the first stage, both of them had extremely low percentages (around 1%) of accuracy, and by adding dropouts to their training section, I made their percentages reach significant values. Then I did hyperparameter tuning to make each one work in the best way, and I got the following results in the test set:
 
@@ -94,8 +101,11 @@ In this part, I implemented three GCN, GAT, and GraphSAGE algorithms; unfortunat
 | GraphSAGE | 56.17% |
 
 You can also see the graph of the progress of these two algorithms to reach these percentages in the figures below:
-this is img ---------------------------
-
+<br>
+<img src="./img/Picture4.png" width="800">
+<br>
+<img src="./img/Picture5.png" width="800">
+<br>
 ### Undirected Graph Conversion
 Running GNN on the graph in the form of undirected edges:
 It was here that I said to myself, What percentages do these algorithms produce on the graph with non-directional edges? At first, I thought they would produce lower percentages, but after a run, I saw that if we consider the edges of our graph as non-directed, the accuracy percentage of the models increases:
@@ -105,7 +115,11 @@ It was here that I said to myself, What percentages do these algorithms produce 
 | GraphSAGE | 71.53% |
 
 You can also see the graph of the progress of these two algorithms to reach these percentages in the figures below:
-this is img ---------------------------
+<br>
+<img src="./img/Picture6.png" width="800">
+<br>
+<img src="./img/Picture7.png" width="800">
+<br>
 The reason for this increase in accuracy is that:
 1. Our relationships become simpler; previously, if a node had received edges from another node, we hardly noticed this in the embedding of that node, but by removing the direction of this relationship, it has become much easier.
 2. The connectivity of our graph increases. Previously, there might not have been a path between two nodes, but by removing the direction between those two nodes, a path can be found.
@@ -117,17 +131,18 @@ Finally, I came and drew a diagram of these seven deep learning methods, where I
 
 
 
-
-
+<br>
+<img src="./img/Picture8.png" width="800">
+<br>
 
 
 | Method | Accuracy
 | --- | --- | 
-| Louvain | 16.069% |
-| Fluid | 16.284% |
-| DeepWalk (K-Means) | 21.164% |
-| Node2Vec (BFS mode) (K-Means) | 21.850% |
-| Node2Vec (DFS mode) (K-Means) | 16.671% |
+| Louvain | 16.07% |
+| Fluid | 16.28% |
+| DeepWalk (K-Means) | 21.16% |
+| Node2Vec (BFS mode) (K-Means) | 21.85% |
+| Node2Vec (DFS mode) (K-Means) | 16.67% |
 | DeepWalk (Deep Learning) | 63.44% |
 | Node2Vec (BFS mode) (Deep Learning) | 63.55% |
 | Node2Vec (DFS mode) (Deep Learning) | 63.35% |
