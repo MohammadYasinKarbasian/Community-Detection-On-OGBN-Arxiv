@@ -1,5 +1,6 @@
 # Community Detection on OGBN-ArXiv Dataset
 
+## Introduction
 This repository contains the code and results of my Machine Learning on Graphs course project, where I applied various community detection methods on the OGBN-ArXiv dataset. 
 ## Dataset
 The dataset that I used for this project is the OGBN-ArXiv dataset, which is part of the Open Graph Benchmark (OGB) collection. The OGBN-ArXiv dataset is a large-scale citation network of arXiv papers, where each node is an arXiv paper and each directed edge indicates that one paper cites another one. Each paper has a 128-dimensional feature vector obtained by averaging the embeddings of words in its title and abstract. Each paper also has a year attribute that indicates when it was published. The goal is to predict the category of the papers based on the network structure and the node features.
