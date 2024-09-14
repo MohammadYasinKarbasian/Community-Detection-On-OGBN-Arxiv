@@ -1,20 +1,20 @@
 # Community Detection on OGBN-ArXiv Dataset
 
 ## Table of Contents
-- [Introduction](#introduction)
-- [Dataset](#Dataset)
-- [Ready-made Functions in NetworkX](#Ready-made-Functions-in-NetworkX)
-- [Forest Fire Sampling with Landmarks](#Forest-Fire-Sampling-with-Landmarks)
-- [Using Entire Graph with Optimaly Implemented Functions](#Using-Entire-Graph-with-Optimaly-Implemented-Functions)
-- [The First Evaluator (Simple Evaluator)](#The-First-Evaluator (Simple Evaluator))
-- [Second Evaluator (Stable Matching-Based Evaluator)](#Second-Evaluator (Stable Matching-Based Evaluator))
-- [Random Walk Methods](#Random-Walk-Methods)
-- [K-Means Clustering on Node Embeddings](#K-Means-Clustering-on-Node-Embeddings)
-- [Deep Learning on Node Embeddings](#Deep-Learning-on-Node-Embeddings)
-- [Graph Neural Networks (GNNs)](#Graph-Neural-Networks (GNNs))
-- [Undirected Graph Conversion](#Undirected-Graph-Conversion)
-- [Results](#Results)
-- [Future Work](#Future-Work)
+- Introduction
+- Dataset
+- Ready-made Functions in NetworkX
+- Forest Fire Sampling with Landmarks
+- Using Entire Graph with Optimaly Implemented Functions
+- The First Evaluator (Simple Evaluator)
+- Second Evaluator (Stable Matching-Based Evaluator)
+- Random Walk Methods
+- K-Means Clustering on Node Embeddings
+- Deep Learning on Node Embeddings
+- Graph Neural Networks (GNNs)
+- Undirected Graph Conversion
+- Results
+- Future Work
 
 
 ## Introduction
@@ -111,6 +111,7 @@ Also, you can see the progress chart of these three algorithms to reach these pe
 <br>
 <img src="./img/Picture3.png" width="800">
 <br>
+
 ## Graph Neural Networks (GNNs)
 In this part, I implemented three GCN, GAT, and GraphSAGE algorithms; unfortunately, I was not able to implement the GAT algorithm using GPU due to the large amount of memory required. I trained each algorithm for 200 epochs, but in the first stage, both of them had extremely low percentages (around 1%) of accuracy, and by adding dropouts to their training section, I made their percentages reach significant values. Then I did hyperparameter tuning to make each one work in the best way, and I got the following results in the test set:
 
